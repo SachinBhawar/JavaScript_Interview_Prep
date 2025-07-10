@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Array Methods - DSA Interview Prep - by Sachin</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>JavaScript Array Methods</h1>
+                <p class="subtitle">Comprehensive Guide for DSA Interview Preparation</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <i class="fas fa-list"></i>
+                        <h3>15</h3>
+                        <p>Essential Methods</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>30+</h3>
+                        <p>Practical Examples</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <h3>5</h3>
+                        <p>Key Concepts</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <i class="fas fa-file-pdf"></i> Save as PDF
+                    </button>
+                    <a href="#" class="btn btn-secondary"> <i class="fas fa-download"></i> Download Notes </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Method 1: push() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">push()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Adds one or more elements to the end of an array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>...elements (elements to add)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New length of the array</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Dynamically appending data to arrays, building collections</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> fruits = [<span class="param">'apple'</span>,
+                            <span class="param">'banana'</span>];<br />
+                            fruits.push(<span class="param">'orange'</span>);
+                            <span class="comment">// ['apple', 'banana', 'orange']</span><br />
+                            fruits.push(<span class="param">'kiwi'</span>,
+                            <span class="param">'mango'</span>);
+                            <span class="comment">// Adds multiple items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 2: pop() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">pop()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Removes the last element from an array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>None</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Removed element</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Stack operations (LIFO), processing items in reverse order</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> numbers = [<span class="param">1</span>,
+                            <span class="param">2</span>, <span class="param">3</span>];<br />
+                            <span class="keyword">const</span> last = numbers.pop();
+                            <span class="comment">// returns 3</span><br />
+                            <span class="comment">// numbers now [1, 2]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 3: shift() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">shift()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Removes the first element from an array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>None</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Removed element</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Queue operations (FIFO), processing items in order</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> colors = [<span class="param">'red'</span>,
+                            <span class="param">'green'</span>, <span class="param">'blue'</span>];<br />
+                            <span class="keyword">const</span> first = colors.shift();
+                            <span class="comment">// returns 'red'</span><br />
+                            <span class="comment">// colors now ['green', 'blue']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 4: unshift() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">unshift()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Adds one or more elements to the beginning of an array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>...elements (elements to add)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New length of the array</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Prepending data to arrays, priority queues</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> nums = [<span class="param">2</span>,
+                            <span class="param">3</span>];<br />
+                            nums.unshift(<span class="param">1</span>);
+                            <span class="comment">// [1, 2, 3]</span><br />
+                            nums.unshift(<span class="param">-1</span>, <span class="param">0</span>);
+                            <span class="comment">// [-1, 0, 1, 2, 3]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 5: concat() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">concat()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Merges two or more arrays into a new array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>...arrays (arrays to concatenate)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New merged array</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Combining arrays without mutation, merging datasets</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> arr1 = [<span class="param">1</span>,
+                            <span class="param">2</span>];<br />
+                            <span class="keyword">const</span> arr2 = [<span class="param">3</span>,
+                            <span class="param">4</span>];<br />
+                            <span class="keyword">const</span> combined = arr1.concat(arr2); <br />
+                            <span class="comment">// [1, 2, 3, 4]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 6: slice() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">slice()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Returns a shallow copy of a portion of an array.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>start (optional), end (optional)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New array with extracted elements</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Extracting subarrays, cloning arrays</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> animals = [<span class="param">'ant'</span>,
+                            <span class="param">'bison'</span>, <span class="param">'camel'</span>];<br />
+                            animals.slice(<span class="param">1</span>);
+                            <span class="comment">// ['bison', 'camel']</span><br />
+                            animals.slice(<span class="param">1</span>, <span class="param">3</span>);
+                            <span class="comment">// ['bison', 'camel']</span><br />
+                            animals.slice(<span class="param">-2</span>);
+                            <span class="comment">// ['bison', 'camel']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 7: splice() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">splice()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Adds/removes elements at a specific position.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>start, deleteCount, ...items</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Array of removed elements</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Inserting/deleting elements at any position</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> months = [<span class="param">'Jan'</span>,
+                            <span class="param">'March'</span>];<br />
+                            <span class="comment">// Insert at index 1</span><br />
+                            months.splice(<span class="param">1</span>, <span class="param">0</span>,
+                            <span class="param">'Feb'</span>); <br />
+                            <span class="comment">// ['Jan', 'Feb', 'March']</span><br /><br />
+
+                            <span class="comment">// Replace 1 element at index 2</span><br />
+                            months.splice(<span class="param">2</span>, <span class="param">1</span>,
+                            <span class="param">'Mar'</span>); <br />
+                            <span class="comment">// ['Jan', 'Feb', 'Mar']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 8: map() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">map()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Creates a new array by transforming each element.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(current, index, array)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New transformed array</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Data transformation, converting data formats</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> numbers = [<span class="param">1</span>,
+                            <span class="param">4</span>, <span class="param">9</span>];<br />
+                            <span class="keyword">const</span> roots = numbers.map(<span class="function"
+                                >num</span
+                            >
+                            => Math.sqrt(num));<br />
+                            <span class="comment">// [1, 2, 3]</span><br /><br />
+
+                            <span class="keyword">const</span> names = [<span class="param">'john'</span>,
+                            <span class="param">'jane'</span>];<br />
+                            <span class="keyword">const</span> capitalized = names.map(<span class="function"
+                                >name</span
+                            >
+                            => <br />
+                            &nbsp;&nbsp;name.charAt(0).toUpperCase() + name.slice(1)<br />
+                            ); <span class="comment">// ['John', 'Jane']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 9: filter() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">filter()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Creates a new array with elements that pass a test.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(element, index, array)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>New filtered array</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Removing invalid data, search filtering</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> words = [<span class="param">'spray'</span>,
+                            <span class="param">'limit'</span>, <span class="param">'elite'</span>];<br />
+                            <span class="keyword">const</span> longWords = words.filter(<span class="function"
+                                >word</span
+                            >
+                            => word.length > 5);<br />
+                            <span class="comment">// ['spray', 'limit']</span><br /><br />
+
+                            <span class="keyword">const</span> nums = [<span class="param">-3</span>,
+                            <span class="param">-2</span>, <span class="param">0</span>,
+                            <span class="param">1</span>, <span class="param">2</span>];<br />
+                            <span class="keyword">const</span> positives = nums.filter(<span class="function"
+                                >n</span
+                            >
+                            => n > 0);<br />
+                            <span class="comment">// [1, 2]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 10: reduce() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">reduce()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Reduces the array to a single value.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(acc, current), initialValue</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Accumulated result</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Summing values, flattening arrays, data aggregation</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> numbers = [<span class="param">1</span>,
+                            <span class="param">2</span>, <span class="param">3</span>,
+                            <span class="param">4</span>];<br />
+                            <span class="keyword">const</span> sum = numbers.reduce(<span class="function"
+                                >(acc, curr)</span
+                            >
+                            => acc + curr, <span class="param">0</span>);<br />
+                            <span class="comment">// 10</span><br /><br />
+
+                            <span class="keyword">const</span> nested = [[<span class="param">1</span>,
+                            <span class="param">2</span>], [<span class="param">3</span>,
+                            <span class="param">4</span>]];<br />
+                            <span class="keyword">const</span> flat = nested.reduce(<span class="function"
+                                >(acc, curr)</span
+                            >
+                            => <br />
+                            &nbsp;&nbsp;acc.concat(curr), []<br />
+                            ); <span class="comment">// [1, 2, 3, 4]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 11: forEach() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">forEach()</h2>
+                        <span class="no-mutates">Pure*</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Executes a function for each element.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(element, index, array)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>undefined</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Side effects (logging, DOM updates), iteration without transformation</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> items = [<span class="param">'item1'</span>,
+                            <span class="param">'item2'</span>];<br />
+                            items.forEach(<span class="function">(item, index)</span> => {<br />
+                            &nbsp;&nbsp;console.log(`${index}: ${item}`);<br />
+                            });<br />
+                            <span class="comment">// Logs: "0: item1", "1: item2"</span><br /><br />
+
+                            <span class="comment">// Modifying external state</span><br />
+                            <span class="keyword">let</span> sum = <span class="param">0</span>;<br />
+                            [<span class="param">1</span>, <span class="param">2</span>,
+                            <span class="param">3</span>].forEach(<span class="function">num</span> => {<br />
+                            &nbsp;&nbsp;sum += num;<br />
+                            }); <span class="comment">// sum = 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 12: find() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">find()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Returns the first element that satisfies a condition.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(element, index, array)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Found element or undefined</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Searching for unique IDs, finding first match</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> users = [<br />
+                            &nbsp;&nbsp;{ id: <span class="param">1</span>, name:
+                            <span class="param">'John'</span> },<br />
+                            &nbsp;&nbsp;{ id: <span class="param">2</span>, name:
+                            <span class="param">'Jane'</span> }<br />
+                            ];<br />
+                            <span class="keyword">const</span> user = users.find(<span class="function"
+                                >user</span
+                            >
+                            => user.id === 2);<br />
+                            <span class="comment">// { id: 2, name: 'Jane' }</span><br /><br />
+
+                            <span class="keyword">const</span> nums = [<span class="param">5</span>,
+                            <span class="param">12</span>, <span class="param">8</span>,
+                            <span class="param">130</span>];<br />
+                            <span class="keyword">const</span> found = nums.find(<span class="function"
+                                >num</span
+                            >
+                            => num > 10);<br />
+                            <span class="comment">// 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 13: findIndex() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">findIndex()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns the index of the first element that satisfies a condition.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>callback(element, index, array)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Index or -1 if not found</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Finding position of an item, then performing operations</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> nums = [<span class="param">5</span>,
+                            <span class="param">12</span>, <span class="param">8</span>,
+                            <span class="param">130</span>];<br />
+                            <span class="keyword">const</span> index = nums.findIndex(<span class="function"
+                                >num</span
+                            >
+                            => num > 10);<br />
+                            <span class="comment">// 1</span><br /><br />
+
+                            <span class="keyword">const</span> fruits = [<span class="param">'apple'</span>,
+                            <span class="param">'banana'</span>, <span class="param">'mango'</span>];<br />
+                            <span class="keyword">const</span> idx = fruits.findIndex(<span class="function"
+                                >fruit</span
+                            >
+                            => fruit === 'banana');<br />
+                            <span class="comment">// 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 14: includes() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">includes()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Checks if an array contains a value.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>value, fromIndex (optional)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Boolean</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Membership checks, simple existence verification</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> pets = [<span class="param">'cat'</span>,
+                            <span class="param">'dog'</span>, <span class="param">'bat'</span>];<br />
+                            pets.includes(<span class="param">'cat'</span>);
+                            <span class="comment">// true</span><br />
+                            pets.includes(<span class="param">'bird'</span>);
+                            <span class="comment">// false</span><br /><br />
+
+                            <span class="comment">// Case-sensitive</span><br />
+                            [<span class="param">1</span>, <span class="param">2</span>,
+                            <span class="param">3</span>].includes(<span class="param">2</span>);
+                            <span class="comment">// true</span><br />
+                            [<span class="param">1</span>, <span class="param">2</span>,
+                            <span class="param">3</span>].includes(<span class="param">4</span>);
+                            <span class="comment">// false</span><br />
+                            [<span class="param">1</span>, <span class="param">2</span>,
+                            <span class="param">NaN</span>].includes(<span class="param">NaN</span>);
+                            <span class="comment">// true</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 15: sort() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">sort()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Sorts elements (lexicographically by default).</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>compareFunction(a, b) (optional)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Sorted array (mutated original)</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Ordering data, preparing data for display</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> nums = [<span class="param">1</span>,
+                            <span class="param">30</span>, <span class="param">4</span>,
+                            <span class="param">21</span>];<br />
+                            nums.sort(); <span class="comment">// [1, 21, 30, 4] (lex order)</span><br />
+                            nums.sort(<span class="function">(a, b)</span> => a - b);
+                            <span class="comment">// [1, 4, 21, 30]</span><br /><br />
+
+                            <span class="keyword">const</span> names = [<span class="param">'Alice'</span>,
+                            <span class="param">'bob'</span>, <span class="param">'Charlie'</span>];<br />
+                            names.sort(<span class="function">(a, b)</span> => a.localeCompare(b));<br />
+                            <span class="comment">// ['Alice', 'bob', 'Charlie']</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Created for DSA Interview Preparation | JavaScript Array Prototype Methods</p>
+                <p>
+                    Remember: Mutation methods change the original array, while pure methods return new arrays
+                </p>
+                <p>https://www.linkedin.com/in/sachin-bhawar/</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
