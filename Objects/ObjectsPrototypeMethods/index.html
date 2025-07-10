@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Object Methods - By Sachin Bhawar</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>JavaScript Object Methods</h1>
+                <p class="subtitle">Mastering Objects for DSA Interview Success</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>15</h3>
+                        <p>Essential Methods</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>30+</h3>
+                        <p>Practical Examples</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>7</h3>
+                        <p>Key Concepts</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <i class="fas fa-file-pdf"></i> Save as PDF
+                    </button>
+                    <a href="#" class="btn btn-secondary"> <i class="fas fa-download"></i> Download Notes </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Method 1: Object.keys() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.keys()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns an array of a given object's own enumerable property names.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to extract keys from)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Array of property names</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Iterating over object properties, getting property names</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> person = {<br />
+                            &nbsp;&nbsp;name: <span class="param">'John'</span>,<br />
+                            &nbsp;&nbsp;age: <span class="param">30</span>,<br />
+                            &nbsp;&nbsp;city: <span class="param">'New York'</span><br />
+                            };<br />
+                            <span class="keyword">const</span> keys = Object.keys(person);<br />
+                            <span class="comment">// ['name', 'age', 'city']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 2: Object.values() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.values()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns an array of a given object's own enumerable property values.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to extract values from)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Array of property values</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Getting all values from an object, data extraction</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> person = {<br />
+                            &nbsp;&nbsp;name: <span class="param">'John'</span>,<br />
+                            &nbsp;&nbsp;age: <span class="param">30</span>,<br />
+                            &nbsp;&nbsp;city: <span class="param">'New York'</span><br />
+                            };<br />
+                            <span class="keyword">const</span> values = Object.values(person);<br />
+                            <span class="comment">// ['John', 30, 'New York']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 3: Object.entries() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.entries()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns an array of a given object's own enumerable string-keyed property [key,
+                            value] pairs.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to extract entries from)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Array of [key, value] pairs</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Converting objects to arrays, iterating over key-value pairs</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> person = {<br />
+                            &nbsp;&nbsp;name: <span class="param">'John'</span>,<br />
+                            &nbsp;&nbsp;age: <span class="param">30</span><br />
+                            };<br />
+                            <span class="keyword">const</span> entries = Object.entries(person);<br />
+                            <span class="comment">// [['name', 'John'], ['age', 30]]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 4: Object.assign() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.assign()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Copies the values of all enumerable own properties from one or more source objects
+                            to a target object.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>target, ...sources</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The modified target object</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Object cloning, merging objects, shallow copies</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> target = { a: <span class="param">1</span>, b:
+                            <span class="param">2</span> };<br />
+                            <span class="keyword">const</span> source = { b: <span class="param">4</span>, c:
+                            <span class="param">5</span> };<br />
+                            <span class="keyword">const</span> result = Object.assign(target, source);<br />
+                            <span class="comment">// { a: 1, b: 4, c: 5 }</span><br />
+                            <span class="comment">// target is also modified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 5: Object.create() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.create()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Creates a new object with the specified prototype object and properties.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>proto, propertiesObject (optional)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>A new object with the specified prototype</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Prototypal inheritance, creating objects with specific prototypes</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> person = {<br />
+                            &nbsp;&nbsp;isHuman: <span class="keyword">false</span>,<br />
+                            &nbsp;&nbsp;print: <span class="keyword">function</span>() {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(`My name is ${this.name}`);<br />
+                            &nbsp;&nbsp;}<br />
+                            };<br />
+                            <span class="keyword">const</span> me = Object.create(person);<br />
+                            me.name = <span class="param">'John'</span>;
+                            <span class="comment">// "name" is a property set on "me"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 6: Object.defineProperty() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.defineProperty()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Defines a new property directly on an object, or modifies an existing property.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj, prop, descriptor</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The object that was passed to the function</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Adding properties with special attributes (getters/setters)</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {};<br />
+                            Object.defineProperty(obj, <span class="param">'property'</span>, {<br />
+                            &nbsp;&nbsp;value: <span class="param">42</span>,<br />
+                            &nbsp;&nbsp;writable: <span class="keyword">false</span><br />
+                            });<br />
+                            obj.property = <span class="param">77</span>;
+                            <span class="comment">// Throws an error in strict mode</span><br />
+                            console.log(obj.property); <span class="comment">// 42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 7: Object.freeze() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.freeze()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Freezes an object: other code can't delete or change any properties.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to freeze)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The frozen object</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Creating immutable objects, preventing accidental changes</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;prop: <span class="param">42</span><br />
+                            };<br />
+                            Object.freeze(obj);<br />
+                            obj.prop = <span class="param">33</span>;
+                            <span class="comment">// Throws an error in strict mode</span><br />
+                            console.log(obj.prop); <span class="comment">// 42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 8: Object.seal() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.seal()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Seals an object, preventing new properties from being added and marking all
+                            existing properties as non-configurable.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to seal)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The sealed object</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Restricting object modifications while allowing property updates</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;prop: <span class="param">42</span><br />
+                            };<br />
+                            Object.seal(obj);<br />
+                            obj.prop = <span class="param">33</span>; <span class="comment">// Works</span
+                            ><br />
+                            delete obj.prop; <span class="comment">// Fails</span><br />
+                            obj.newProp = <span class="param">'value'</span>;
+                            <span class="comment">// Fails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 9: Object.getPrototypeOf() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.getPrototypeOf()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns the prototype (i.e., the value of the internal [[Prototype]] property) of
+                            the specified object.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object whose prototype is to be returned)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The prototype of the given object</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Inspecting object prototypes, inheritance checks</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> proto = {};<br />
+                            <span class="keyword">const</span> obj = Object.create(proto);<br />
+                            Object.getPrototypeOf(obj) === proto; <span class="comment">// true</span><br />
+                            <br />
+                            <span class="keyword">const</span> date =
+                            <span class="keyword">new</span> Date();<br />
+                            Object.getPrototypeOf(date) === Date.prototype;
+                            <span class="comment">// true</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 10: Object.setPrototypeOf() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.setPrototypeOf()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Sets the prototype (i.e., the internal [[Prototype]] property) of a specified
+                            object to another object.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj, prototype</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The object with its prototype changed</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Changing an object's prototype, dynamic inheritance</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> animal = {<br />
+                            &nbsp;&nbsp;makeSound() {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(this.sound);<br />
+                            &nbsp;&nbsp;}<br />
+                            };<br />
+                            <span class="keyword">const</span> dog = {<br />
+                            &nbsp;&nbsp;sound: <span class="param">'Woof!'</span><br />
+                            };<br />
+                            Object.setPrototypeOf(dog, animal);<br />
+                            dog.makeSound(); <span class="comment">// 'Woof!'</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 11: Object.hasOwn() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.hasOwn()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns a boolean indicating whether the specified object has the indicated
+                            property as its own property.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj, prop</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Boolean</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Checking if a property exists directly on an object</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;prop: <span class="param">42</span><br />
+                            };<br />
+                            Object.hasOwn(obj, <span class="param">'prop'</span>);
+                            <span class="comment">// true</span><br />
+                            Object.hasOwn(obj, <span class="param">'toString'</span>);
+                            <span class="comment">// false</span><br />
+                            <br />
+                            <span class="comment">// Better alternative to obj.hasOwnProperty()</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 12: Object.getOwnPropertyNames() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.getOwnPropertyNames()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">
+                            Returns an array of all properties (including non-enumerable properties) found
+                            directly in a given object.
+                        </p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to inspect)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Array of property names</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Getting all own properties of an object (including non-enumerable)</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;a: <span class="param">1</span>,<br />
+                            &nbsp;&nbsp;b: <span class="param">2</span><br />
+                            };<br />
+                            Object.defineProperty(obj, <span class="param">'c'</span>, {<br />
+                            &nbsp;&nbsp;value: <span class="param">3</span>,<br />
+                            &nbsp;&nbsp;enumerable: <span class="keyword">false</span><br />
+                            });<br />
+                            <span class="keyword">const</span> props = Object.getOwnPropertyNames(obj);<br />
+                            <span class="comment">// ['a', 'b', 'c']</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 13: Object.getOwnPropertyDescriptors() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.getOwnPropertyDescriptors()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Returns all own property descriptors of a given object.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to inspect)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Object containing property descriptors</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Cloning objects with property attributes, detailed object inspection</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;name: <span class="param">'John'</span><br />
+                            };<br />
+                            <span class="keyword">const</span> descriptors =
+                            Object.getOwnPropertyDescriptors(obj);<br />
+                            <span class="comment"
+                                >/*<br />
+                                {<br />
+                                &nbsp;&nbsp;name: {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;value: 'John',<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;writable: true,<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;enumerable: true,<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;configurable: true<br />
+                                &nbsp;&nbsp;}<br />
+                                }<br />
+                                */</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 14: Object.is() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.is()</h2>
+                        <span class="no-mutates">Pure</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Determines whether two values are the same value.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>value1, value2</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>Boolean</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Strict equality checks, especially for edge cases</p>
+                        </div>
+                        <div class="code">
+                            Object.is(<span class="param">'foo'</span>, <span class="param">'foo'</span>);
+                            <span class="comment">// true</span><br />
+                            Object.is(<span class="keyword">window</span>,
+                            <span class="keyword">window</span>); <span class="comment">// true</span><br />
+                            Object.is(<span class="keyword">NaN</span>, <span class="keyword">NaN</span>);
+                            <span class="comment">// true</span><br />
+                            Object.is(<span class="param">0</span>, <span class="param">-0</span>);
+                            <span class="comment">// false</span><br />
+                            <br />
+                            <span class="comment">// Comparison with ===</span><br />
+                            <span class="param">NaN</span> === <span class="param">NaN</span>;
+                            <span class="comment">// false</span><br />
+                            <span class="param">0</span> === <span class="param">-0</span>;
+                            <span class="comment">// true</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Method 15: Object.preventExtensions() -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="method-name">Object.preventExtensions()</h2>
+                        <span class="mutates">Mutates</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Prevents new properties from ever being added to an object.</p>
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="detail-title">Parameters:</span>
+                                <span>obj (the object to make non-extensible)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-title">Returns:</span>
+                                <span>The object being made non-extensible</span>
+                            </div>
+                        </div>
+                        <div class="use-case">
+                            <h3>Use Case:</h3>
+                            <p>Restricting object growth, creating fixed property sets</p>
+                        </div>
+                        <div class="code">
+                            <span class="keyword">const</span> obj = {<br />
+                            &nbsp;&nbsp;prop: <span class="param">42</span><br />
+                            };<br />
+                            Object.preventExtensions(obj);<br />
+                            <br />
+                            <span class="comment">// Can modify existing properties</span><br />
+                            obj.prop = <span class="param">33</span>; <span class="comment">// Works</span
+                            ><br />
+                            <br />
+                            <span class="comment">// Cannot add new properties</span><br />
+                            obj.newProp = <span class="param">'value'</span>;
+                            <span class="comment">// Fails</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Created for DSA Interview Preparation | JavaScript Object Methods</p>
+                <p>
+                    Remember: Objects are fundamental to JavaScript - master these methods for interview
+                    success
+                </p>
+                <br />
+                <br />
+                <p>https://www.linkedin.com/in/sachin-bhawar/</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
